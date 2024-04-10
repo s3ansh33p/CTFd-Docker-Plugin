@@ -81,7 +81,7 @@ function container_request(challenge_id) {
 			requestError.style.display = "none";
 			requestError.firstElementChild.innerHTML = "";
 			requestButton.parentNode.removeChild(requestButton);
-			connectionInfo.innerHTML = data.hostname + ":" + data.port;
+			connectionInfo.innerHTML = `<a target="_blank" rel="noopener noreferrer" href="http://${data.hostname}:${data.port}">http://${data.hostname}:${data.port}</a>`;
 			containerExpires.innerHTML = Math.ceil(
 				(new Date(data.expires * 1000) - new Date()) / 1000 / 60
 			);
@@ -128,7 +128,7 @@ function container_reset(challenge_id) {
 		} else {
 			// Success
 			requestError.style.display = "none";
-			connectionInfo.innerHTML = data.hostname + ":" + data.port;
+			connectionInfo.innerHTML = `<a target="_blank" rel="noopener noreferrer" href="http://${data.hostname}:${data.port}">http://${data.hostname}:${data.port}</a>`;
 			containerExpires.innerHTML = Math.ceil(
 				(new Date(data.expires * 1000) - new Date()) / 1000 / 60
 			);
